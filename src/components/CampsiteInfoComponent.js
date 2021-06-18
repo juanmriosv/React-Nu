@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class CampsiteInfo extends Component {
-    constructor(props) { 
+    constructor(props) {
         super(props);
         this.state = {
 
         }
     }
+    renderCampsite(campsite){
+        return(
+            <div className="col-md-5 m-1">
+                <Card>
+                    <CardImg src={campsite.image} alt={campsite.name} />
+                    <CardBody>
+                        <CardTitle>{campsite.name}</CardTitle>
+                        <CardText>{campsite.description}</CardText>
+                    </CardBody>
+                </Card>
+            </div>
+        )
+    }
+
     render() {
-        if (this.props.campsite) { //why this?
+        if (this.props.campsite) { //why this and below props?
             return  (
                 <div className="row">
-
+                    {this.renderCampsite(this.props.campsite) }
                 </div>
             )
         }
