@@ -180,6 +180,4 @@ function CampsiteInfo(props){
     return <div />
 }
 
-
-
 export default CampsiteInfo;
